@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/JavaScript">
+    function display() {
+        alert("Event fired...")
+    }
+    function displayName() {
+        alert("event fired...")
+        //1st ways retrieve value using name attribute 
+        //var name = document.getElementsByName("user")[0].value;
+        //alert("Welcome user "+name);
+
+        //2nd way retrieve using id attribute 
+        var name = document.getElementById("name").value;
+        alert("Welcome user "+name);
+    }
+    </script>
+</head>
+<body>
+    <input type="button" value="Click Here!" onclick="display()"/>
+    <br/>
+    <label>Name</label><input type="text" name="user" id="name"/><br/>
+    <input type="button" value="click here" onclick="displayName()"/>
+
+</body>
+</html>
