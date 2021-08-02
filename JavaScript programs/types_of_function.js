@@ -42,34 +42,55 @@
 // }))
 
 //expression style
-var dis1= function() {
-    document.write("Expresion style function");
+// var dis1= function() {
+//     document.write("Expresion style function");
+// }
+// dis1();
+// var addNumber = function(a,b){
+//     var sum = a+b;
+//     return sum;
+// }
+// document.write("<br> sum is "+addNumber(10,20));
+
+// //Arrow style function 
+// var dis2 = ()=>document.write("<br/>Arrow style function")
+// dis2();
+
+// // arrow function by default return without return keyword. 
+// var sumOfNumber = (a,b)=>a+b;
+// document.write("<br> Sum of two number is "+sumOfNumber(100,200));
+
+// // arrow function with multiple line statement 
+
+// var findLargest = (a,b)=> {
+//     if(a>b){
+//         return "a is largest";
+//     }else {
+//         return "b is largest";
+//     }
+// }
+
+// document.write("<br> Find the largest "+findLargest(10,50));
+
+//Normal funtion 
+function display() {
+    document.write("<br> Normal function execute only if we call ")
+    document.write("<br> WE can call the function from script or from html using event")
 }
-dis1();
-var addNumber = function(a,b){
+display();
+display();
+display();
+
+//IIFE function 
+//syntax    
+(function(){
+    document.write("<br> IIFE function coding...")
+})();
+
+// IIFE function with passing parameter 
+(function(a,b){
     var sum = a+b;
-    return sum;
-}
-document.write("<br> sum is "+addNumber(10,20));
-
-//Arrow style function 
-var dis2 = ()=>document.write("<br/>Arrow style function")
-dis2();
-
-// arrow function by default return without return keyword. 
-var sumOfNumber = (a,b)=>a+b;
-document.write("<br> Sum of two number is "+sumOfNumber(100,200));
-
-// arrow function with multiple line statement 
-
-var findLargest = (a,b)=> {
-    if(a>b){
-        return "a is largest";
-    }else {
-        return "b is largest";
-    }
-}
-
-document.write("<br> Find the largest "+findLargest(10,50));
+    document.write("<br/>sum of two number is "+sum)
+})(10,20);
 
 
