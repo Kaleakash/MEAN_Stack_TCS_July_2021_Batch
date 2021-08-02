@@ -79,23 +79,39 @@
 // emp2.dis();
 
 // Constructor Example 
-class Employee {
-        constructor(id,name="Unkown",salary=8000){
-                this.id = id;
-                this.name = name;
-                this.salary = salary;   // initialization 
-        }
-        dis() {
-            document.write("<br/>id is "+this.id);
-            document.write("<br/>name is "+this.name);
-            document.write("<br/>salary is "+this.salary);
-        }
-}
-let emp1 = new Employee(100,"Raj",12000);
-let emp2 = new Employee(101,"Ramesh",14000);
-let emp3 = new Employee(102,"Raju")
-let emp4 = new Employee()
-emp1.dis();
-emp2.dis();
-emp3.dis();
-emp4.dis();
+// class Employee {
+//         constructor(id,name="Unkown",salary=8000){
+//                 this.id = id;
+//                 this.name = name;
+//                 this.salary = salary;   // initialization 
+//         }
+//         dis() {
+//             document.write("<br/>id is "+this.id);
+//             document.write("<br/>name is "+this.name);
+//             document.write("<br/>salary is "+this.salary);
+//         }
+// }
+// let emp1 = new Employee(100,"Raj",12000);
+// let emp2 = new Employee(101,"Ramesh",14000);
+// let emp3 = new Employee(102,"Raju")
+// let emp4 = new Employee()
+// emp1.dis();
+// emp2.dis();
+// emp3.dis();
+// emp4.dis();
+
+
+// literal style object creation from ES5 style synax 
+
+let emp1 = {id:100,name:"Ramesh",age:21};
+document.write("<br/>id is "+emp1.id)
+document.write("<br/>Name is "+emp1.name)
+document.write("<br/> age is "+emp1.age)
+
+
+
+
+
+
+
+
