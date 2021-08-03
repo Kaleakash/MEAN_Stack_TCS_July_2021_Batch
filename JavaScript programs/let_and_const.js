@@ -3,7 +3,7 @@ a=20;
 var a=30;
 let b=40;
 b=50;
-//let b=60;
+//let b=60;		// we can't re-declare same variable once again 	
 for(var i=0;i<10000;i++){
 
 }
