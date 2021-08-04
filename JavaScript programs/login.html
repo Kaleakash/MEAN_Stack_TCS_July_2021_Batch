@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/JavaScript">
+        function validate() {
+         var name = document.getElementById("n1").value;
+         var pass = document.getElementById("n2").value;
+         if(name.length==0){
+             alert("Plz enter the user name")
+             return false;
+         } else if(pass.length==0){
+             alert("Plz enter teh password")
+             return false
+         }else {
+             return true;
+         }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <h2>Login Page validation using HTML5</h2>
+        <form action="home.html" method="GET">
+            <label>UserName</label>
+            <input type="text" name="uname" required/><br/>
+            <label>Password</label>
+            <input type="password" name="pname" required/><br/>
+            <input type="submit" value="submit"/>
+            <input type="reset" value="reset"/>
+        </form>
+        <hr/>
+        <h2>Login Page validation using JavaScript</h2>
+        <form action="home.html" method="GET" onsubmit="return validate()">
+            <label>UserName</label>
+            <input type="text" name="uname1" id="n1"/><br/>
+            <label>Password</label>
+            <input type="password" name="pname1" id="n2"/><br/>
+            <input type="submit" value="submit"/>
+            <input type="reset" value="reset"/>
+        </form>
+    </div>
+</body>
+</html>

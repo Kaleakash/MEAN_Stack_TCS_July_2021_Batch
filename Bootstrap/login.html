@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">   
+    <style>
+        div{
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Login Page</h2>
+        <form>
+            <label>UserName</label>
+            <input type="text" name="user"/><br/>
+            <label>Password</label>
+            <input type="password" name="pass"/><br/>
+            <input type="submit" value="submit"/>
+            <input type="reset" value="reset"/>
+        </form>
+    </div>
+    <hr/>
+    <div class="container">
+        <h2>Login Page</h2>
+        <form class="form-group">
+            <label class="label-primary">UserName</label>
+            <input type="text" name="user" class="form-control"/><br/>
+            <label class="label-primary">Password</label>
+            <input type="password" name="pass" class="form-control"/><br/>
+            <input type="submit" value="submit" class="btn btn-primary"/>
+            <input type="reset" value="reset" class="btn btn-secondary"/>
+        </form>
+    </div>
+    <hr/>
+    <div class="container">
+        <form class="form-group">
+            <h2>Login Page</h2>
+        <div class="row">
+               <div class="col-2"><label>UserName</label></div>
+        <div class="col-3"><input type="text" name="user" class="form-control"/></div>
+        </div>
+        <div class="row">
+            <div class="col-2"><label>Password</label></div>
+            <div class="col-3"><input type="password" name="pass" class="form-control"/></div>
+        </div>
+        <div class="row">
+            <div class="col-2"><input type="submit" value="submit" class="btn btn-success"/></div>
+            <div class="col-2"><input type="reset" value="reset" class="btn btn-info"/></div>
+        </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -26,7 +26,7 @@ function displayData() {
     let empObj = sessionStorage.getItem("empObj");
     let empJson = JSON.parse(empObj)
     var tableContent=""
-    var startTable ="<table border=1><tr><th>Id</th><th>Name</th><th>Age</th></tr>"
+    var startTable ="<table border=1 class='table'><tr><th>Id</th><th>Name</th><th>Age</th></tr>"
     
     tableContent ="<tr><td>"+empJson.id+"</td><td>"+empJson.name+"</td><td>"+empJson.age+"</td></tr>"
     
