@@ -43,7 +43,10 @@
 class Employee {
     // we can use access specifiers(private/public) with parameter variable
     // to make the variable as instance variable.  
-    constructor(private id:number,public name:string,private age:number){  } 
+    // typescript doesn't support multiple constructor 
+    // to make multiple constructor work we have to use optional or 
+    // default initialzaton parameter concept. 
+    constructor(private id:number,public name:string,private age?:number){  } 
     dis(): void {
         console.log(" id "+this.id);
         console.log("name is "+this.name);
@@ -52,6 +55,8 @@ class Employee {
 }
 let emp1 = new Employee(100,"Raj",21);
 let emp2 = new Employee(101,"Rajesh",22);
+let emp3 = new Employee(102,"Munjaap");
+
 emp1.dis();
 emp2.dis();
 console.log(emp1.name)
