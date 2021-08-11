@@ -1,0 +1,11 @@
+<div>
+    <h2>One way data binding - Event binding</h2>
+    <input type="button" value="Click Here" (click)="fun()"/>
+    <br/>
+    {{msg}}
+    <br/>
+    <span [innerText]="msg"></span>
+    <br/>
+    <input type="button" value="click here" disabled={{f1}}/><br/>
+    <input type="button" value="click here" [disabled]="f2"/><br/>
+</div>

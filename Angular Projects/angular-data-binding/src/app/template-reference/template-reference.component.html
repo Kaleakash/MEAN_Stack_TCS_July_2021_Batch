@@ -1,0 +1,15 @@
+<div>
+    <h2>Template Reference</h2>
+    Name :<input type="text" #nameRef/><br/>
+    <input type="button" value="click here" (click)="passValue(nameRef)"/>
+    <br/>
+    {{fname}}
+    <br/>
+    <h2>Calculator</h2>
+    1st Number :<input type="text" #n1/><br/>
+    2nd Number :<input type="text" #n2/><br/>
+    <input type="button" value="Add" 
+    (click)="addNumber(n1,n2)"/>
+    <br/>
+    Sum is {{sum}}
+</div>
