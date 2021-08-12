@@ -1,0 +1,43 @@
+<div>
+    <h2>Structure directive *ngIf and *ngFor</h2>
+    <div *ngIf="false">Welcome to ngIf with false value</div>
+    <div *ngIf="true">Welcome to ngIf with true value</div>
+    <div *ngIf="f1">Welcome to ngIf with f1 variable</div>
+    <div *ngIf="f2">Welcome to ngIf with f2 variable</div>
+    <input type="button" value="click here" (click)="changeValue()"/>
+    <br/>
+    <input type="button" [value]="b1" (click)="toggle()"/>
+    <br/>
+    <div *ngIf="flag">
+        <h2>Welcome to Angular *ngIf with event</h2>
+    </div>
+    <hr/>
+    Name : <input type="text" #nameRef/><br/>
+    <input type="button" value="Add Names" 
+    (click)="addName(nameRef)"/><br/>
+    <h2>All students names are </h2>
+    <ul>
+        <li *ngFor="let name of stdNames">{{name}}</li>
+    </ul>
+    <hr/>
+    <div>
+        <p *ngFor="let name of stdNames">{{name}}</p>
+    </div>
+    <hr/>
+    <table border="1">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Salary</th>
+            </tr>
+            <tr *ngFor="let emp of employees">
+                <td>{{emp.id}}</td> 
+                <td>{{emp.name}}</td>
+                <td>{{emp.salary}}</td>
+            </tr>
+    </table>
+</div>
+
+
+
+
