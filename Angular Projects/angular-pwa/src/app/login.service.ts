@@ -9,7 +9,7 @@ export class LoginService {
 
   constructor(public http:HttpClient) { }
 
-  checkUser():Observable<Login[]> {
+  checkUserInfo():Observable<Login[]> {
     return this.http.get<Login[]>("/assets/login.json");
   }
 }

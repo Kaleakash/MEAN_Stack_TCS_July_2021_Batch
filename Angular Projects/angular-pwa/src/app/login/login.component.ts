@@ -13,20 +13,20 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  msg?:string=""
   checkUser(loginRef:NgForm){
     let login = loginRef.value;
     let flag=0;
-    this.loginSer.checkUser().subscribe(result=> {
+    this.loginSer.checkUserInfo().subscribe(result=> {
       for(let ll of result){
         if(ll.user == login.user && ll.pass==login.pass){
             flag++;
         }
       }
         if(flag>0){
-          console.log("Successfully login")
+         this.msg="Successfully Login"
         }else {
-          console.log("Failure login")
+          this.msg = "Failure try once again";
         }
     });
 
