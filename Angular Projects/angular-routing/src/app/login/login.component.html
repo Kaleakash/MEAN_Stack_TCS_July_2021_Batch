@@ -1,1 +1,13 @@
-<p>login works!</p>
+<div class="container">
+    <h2>Login Page</h2>
+    <form [formGroup]="loginRef" (ngSubmit)="checkUser()" class="form-group">
+        <label>UserName</label>
+        <input type="text" formControlName="user" class="form-control"/><br/>
+        <label>Password</label>
+        <input type="password" formControlName="pass" class="form-control"/><br/>
+        <input type="submit" value="Sign In!" class="btn btn-success"/>
+        <input type="reset" value="reset" class="btn btn-info"/>
+    </form>
+    <br/>
+    <span style="color:red;">{{msg}}</span>
+</div>
