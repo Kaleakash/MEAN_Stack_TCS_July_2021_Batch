@@ -1,0 +1,10 @@
+<div>
+    <h2>Exam using Template Driven Form</h2>
+    <form #examRef="ngForm">
+        <div *ngFor="let q of allQuestion">
+               <p>{{q.question}}</p> 
+               <input type="radio" name={{q.question}} value={{q.ans1}} ngModel/>{{q.ans1}}<br/>
+               <input type="radio" name={{q.question}} value={{q.ans2}} ngModel/>{{q.ans2}}<br/>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,11 @@
+<div>
+    <h2>Angular Exam using Model Driven Form</h2>
+    <form [formGroup]="myForm" (ngSubmit)="submit()">
+        <div *ngFor="let q of allQuestion">
+            <p>{{q.question}}</p>
+        <input type="radio" formControlName={{q.question}} value={{q.ans1}}/>{{q.ans1}}<br/>
+        <input type="radio" formControlName={{q.question}} value={{q.ans2}}/>{{q.ans2}}<br/>
+        </div>
+        <input type="submit" value="submit"/>
+    </form>
+</div>
