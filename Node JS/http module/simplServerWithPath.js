@@ -43,8 +43,8 @@ let loginPage = `
 let server = http.createServer((request,response)=> {
     let urlInfo = url.parse(request.url,true);
     //console.log(urlInfo)
-    console.log("path "+urlInfo.path)   // path :path name with query details 
-    console.log("pathName"+urlInfo.pathname)    // pathname : only path 
+    //console.log("path "+urlInfo.path)   // path :path name with query details 
+    //console.log("pathName"+urlInfo.pathname)    // pathname : only path 
     if(urlInfo.path != "/favicon.ico"){
         if(urlInfo.path == "/AboutUs"){
                 response.write("Welcome to About Us Page");
@@ -54,11 +54,8 @@ let server = http.createServer((request,response)=> {
             response.write(loginPage);
         }else if(urlInfo.pathname == "/checkLogin"){
                 let login = urlInfo.query;
-                // login receive the value from from
-                loginDetail
-                // hold three user details.
-
-                if(){
+                let result = loginDetail.find(l=>l.user == login.user && l.pass==login.pass);
+                if(result != undefined){
                         response.write("Successfully Login!");
                 }else {
                         response.write("Failure try once again!");
