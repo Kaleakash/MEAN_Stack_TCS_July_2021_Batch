@@ -1,4 +1,4 @@
-const { copyFileSync } = require("fs");
+
 let url = require("url")
 let urlDetails = "http://localhost:9090/simpleWebApp?name=Raj&age=21";
 console.log(urlDetails);

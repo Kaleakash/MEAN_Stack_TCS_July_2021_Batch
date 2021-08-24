@@ -92,7 +92,7 @@ let server = http.createServer((request,response)=> {
                 // 200 -success code , content type in header text/html
                 response.writeHead(200,{"content-type":"text/html"});
                 if(result == undefined){
-                    loginDetail.push(login);
+                    loginDetail.push(login);    // added user and pass in loginDetails
                     response.write("Account Created successfully!");     
                     response.write(loginPage);            
                     }else {
@@ -108,6 +108,5 @@ let server = http.createServer((request,response)=> {
     response.end();
 
 })
-
 
 server.listen(9090,()=>console.log("Server running on port number 9090"))
