@@ -35,10 +35,34 @@ let loginPage = `
         <label>Password</label>
         <input type="password" name="pass"/><br/>
         <input type="submit" value="submit"/>
-       <input type="reset" value="reset"/> 
+       <input type="reset" value="reset"/> <br/>
+       <a href="signup">Sign Up</a>
     </form>
 </body>
 </html> 
+`
+
+let registerLoginPage=`
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Registration Page</h2>
+    <form action="register">
+        <label>UserName</label>
+        <input type="text" name="user"/><br/>
+        <label>Password</label>
+        <input type="password" name="pass"/><br/>
+        <input type="submit" value="submit"/>
+       <input type="reset" value="reset"/> 
+    </form>
+</body>
+</html>
 `
 let server = http.createServer((request,response)=> {
     let urlInfo = url.parse(request.url,true);
@@ -60,12 +84,29 @@ let server = http.createServer((request,response)=> {
                 }else {
                         response.write("Failure try once again!");
                 }
+        }else if(urlInfo.path =="/signup"){
+                response.write(registerLoginPage);
+        }else if(urlInfo.pathname == "/register"){
+                let login = urlInfo.query;
+                let result = loginDetail.find(l=>l.user == login.user);
+                // 200 -success code , content type in header text/html
+                response.writeHead(200,{"content-type":"text/html"});
+                if(result == undefined){
+                    loginDetail.push(login);
+                    response.write("Account Created successfully!");     
+                    response.write(loginPage);            
+                    }else {
+                        response.write("User Name must be unique!");     
+                        response.write(loginPage); 
+                }
         }
         else {
             response.write(indexPage);  
         }
     }
+    
     response.end();
+
 })
 
 
