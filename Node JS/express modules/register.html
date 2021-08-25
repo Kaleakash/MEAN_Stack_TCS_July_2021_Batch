@@ -10,9 +10,9 @@
     <h2>Registration Page</h2>
     <form action="register" method="POST">
         <label>FirstName</label>
-        <input type="text" name="fname"/><br/>
+        <input type="text" name="fname" required/><br/>
         <label>LastName</label>
-        <input type="text" name="lname"/><br/>
+        <input type="text" name="lname" required/><br/>
         <label>Sex Or Gender</label>
         <input type="radio" name="gender" value="Male">Male
         <input type="radio" name="gender" value="FeMale">FeMale
@@ -31,7 +31,7 @@
         </select>
         <br/>
         <label>UserName</label>
-        <input type="text" name="uname"/><br/>
+        <input type="email" name="uname" required/><br/>
         <label>Password</label>
         <input type="password" name="pname"/><br/>
         <input type="submit" value="Account Create"/>

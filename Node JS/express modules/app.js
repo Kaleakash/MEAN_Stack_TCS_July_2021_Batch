@@ -41,7 +41,8 @@ app.get("/checkUser",(request,response)=> {
     // console.log(pass);
     let user = request.query["user"];
     let pass = request.query["pass"];
-    if(user=="Raj" && pass=="123"){
+    let found = userDetails.find(u=>u.uname==user && u.pname==pass);
+    if(found != undefined){
             response.send("Successfully Login!");
     }else {
             response.send("Failure try once again!");
@@ -57,9 +58,8 @@ app.get("/SignUp",(request,response)=> {
 // });
 
 app.post("/register",(request,response)=>{
-            let userDetail = request.body;
-            userDetails.push(userDetail);
-            //response.write("Account Created successfuly")
+            let userDetail = request.body;      // json data from body. 
+            userDetails.push(userDetail);       // store in array. 
             response.sendFile(__dirname+"\\login.html");
 });
 
