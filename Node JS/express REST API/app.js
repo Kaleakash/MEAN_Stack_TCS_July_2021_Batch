@@ -1,8 +1,12 @@
 // load the module 
 let express = require("express");
+let bodyParser = require("body-parser");
 
 //create the reference 
 let app = express();
+
+//app.use(bodyParser.urlencoded({extended:true}));    // passing the value through form post method 
+app.use(bodyParser.json());                             // enable json data from request body part 
 let emp  = {id:100,name:"Raj",age:21};
 let employees = [
         {id:100,name:"Raj",age:21},
@@ -59,7 +63,31 @@ app.get("/multiPathParam/:id/:name/:salary",(request,response)=> {
     response.send("Welcome user with multiple path param "+id+" Name is "+name+"Salary "+salary);
 })
 
+// store Employee details 
+// http://localhost:9090/storeEmployee
+// {"id":100,"name":"Raj","age":21}     : whole json object must be pass 
+app.post("/storeEmployee",(request,response)=> {
+        let employee = request.body;
+        console.log(employee)
+        response.send("employee data store");
+})
 
+
+// update Employee details 
+// http://localhost:9090/updateEmployee
+// {"id":100,"age":21}                      we can pass partial object. 
+app.put("/updateEmployee",(request,response)=> {
+    let employee = request.body;
+    console.log(employee)
+    response.send("employee data updated");
+})
+
+//delete Employee details 
+// http://localhost:9090/deleteEmployeeInfo/100 
+app.delete("/deleteEmployeeInfo/:id",(request,response)=> {
+    let id = request.params.id;
+    response.send("employee details deleted using id as "+id);
+})
 
 
 app.listen(9090,()=>console.log("Server running on port number 9090"));
