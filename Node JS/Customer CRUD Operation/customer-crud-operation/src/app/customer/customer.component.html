@@ -11,4 +11,37 @@
     </form>
     <br/>
     <span style="color:red">{{storeMsg}}</span>
+    <hr/>
+    <table border="1">
+            <tr>
+                <th>Customer Id</th>
+                <th>Customer Name</th>
+                <th>Customer Age</th>
+                <th>Delete</th>
+                <th>Update</th>
+            </tr>
+            <tr *ngFor="let customer of customers">
+                <td>{{customer.cid}}</td>
+                <td>{{customer.cname}}</td>
+                <td>{{customer.age}}</td>
+               <td><input type="button" value="Delete" (click)="deleteRec(customer.cid)"/></td>
+               <td><input type="button" value="Update" (click)="updateAge(customer.cid,customer.age)"/></td> 
+            </tr>
+    </table>
+    <br/>
+    <span style="color:red">{{deleteMsg}}</span>
+    <br/>
+    <hr/>
+    
+    <div *ngIf="flag">
+        <form (ngSubmit)="nowUpdateAge()">
+            <label>Customer Id</label>
+            <input type="text" [(ngModel)]="cid" name="cid" readonly/><br/>
+            <label>Customer Age</label>
+            <input type="text" [(ngModel)]="age" name="age"/><br/>
+            <input type="submit" value="Update Age"/>
+            <input type="reset" value="reset"/>
+        </form>
+    </div>
+    <span style="color:red">{{updateMsg}}</span>
 </div>
