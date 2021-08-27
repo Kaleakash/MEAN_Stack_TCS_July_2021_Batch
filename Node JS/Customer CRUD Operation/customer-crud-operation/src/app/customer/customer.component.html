@@ -1,0 +1,14 @@
+<div>
+    <form [formGroup]="customerRef" (ngSubmit)="storeInfo()">
+        <label>Customer Id</label>
+        <input type="text" formControlName="cid"/><br/>
+        <label>Customer Name</label>
+        <input type="text" formControlName="cname"/><br/>
+        <label>Customer Age</label>
+        <input type="text" formControlName="age"/><br/>
+        <input type="submit" value="Store Customer Info"/>
+        <input type="reset" value="Reset"/>
+    </form>
+    <br/>
+    <span style="color:red">{{storeMsg}}</span>
+</div>
