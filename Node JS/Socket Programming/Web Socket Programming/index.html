@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/JavaScript">
+    let ws = new WebSocket("ws://localhost:9090");
+
+    //open the connecton 
+    ws.onopen= ()=> {
+        // send data to web socket server application
+        ws.send("Hello Server, I am Web Socket Client App!");
+        info = ()=> {
+            let msg = document.getElementById("dd").value;
+            ws.send(msg);
+            document.getElementById("dd").value="";
+        }
+    }
+    // receive the messag from server application 
+    ws.onmessage = (msg)=> {
+        console.log(msg.data);
+    }
+    </script>
+</head>
+<body>
+    <h2>Web Socket Program</h2>
+    Messages :<input type="text" id="dd"/><br/>
+    <input type="button" value="Send Data" onclick="info()"/>
+</body>
+</html>
