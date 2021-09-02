@@ -12,7 +12,7 @@ catch(err=>console.log(err))
 //to use this db connection we have to call function 
 let db = mongoose.connection;
 db.once("open",()=> {
-    // We have to defined schema which provide the structure for collection 
+    // We have to defined schema 
     let productSchema = mongoose.Schema({
         _id:Number,
         pname:String,
@@ -24,19 +24,20 @@ db.once("open",()=> {
     // mongoose intenrally create collection name in lower case 
     // with post fix s.
     let productModel = mongoose.model("Product",productSchema);
-
-    // using model we have to create the reference. 
-    let p1 = new productModel({_id:100,pname:"TV",price:120000});
-    let p2 = new productModel({_id:101,pname:"Computer",price:55000});
-    let p3 = new productModel({_id:102,pname:"Laptop",price:850000});
-    let p4 = new productModel({_id:103,pname:"Mobile",price:65000});
-
-    productModel.insertMany([p1,p2,p3,p4],(err,result)=> {
-            if(!err){
-                console.log(result)
-            } else {
-                console.log(err);
+    
+    productModel.updateOne({_id:108},{$set:{price:90000}},(err,result)=> {
+        if(!err){
+            console.log(result)
+            if(result.modifiedCount>0 || result.matchedCount>0){
+                    console.log("Product updated successfully")
+            }else {
+                    console.log("Prouct didn't update");
             }
-            mongoose.disconnect();  
+        }else {
+            console.log(err);
+        }
+        mongoose.disconnect();
     })
+    
+
 })
