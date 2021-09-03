@@ -16,12 +16,16 @@ app.use(bodyParser.json())
 let url = "mongodb://localhost:27017/tcsmean"
 
 // connect the database 
-mongoose.connect(url).
-then(res=>console.log("connected")).
-catch(error=>console.log(error));
+mongoose.connect(url).then(res=>console.log("connected")).catch(error=>console.log(error));
 
 // middleware which help to match main path and pass the
 // request to router file. 
-app.use("/api/product",routerProduct);
+// http://localhost:9090/api/product/getAllProducts     : Get 
+// http://localhost:9090/api/product/storeProduct       : Post 
+// http://localhost:9090/api/product/deleteProduct       : Delete 
+// http://localhost:9090/api/product/updateProduct       : Update 
 
+app.use("/api/product",routerProduct);
+// app.use("/api/order",routerOrder);
+// app.use("/api/login",routerLogin);
 app.listen(9090,()=>console.log("Server running on port number 9090"))

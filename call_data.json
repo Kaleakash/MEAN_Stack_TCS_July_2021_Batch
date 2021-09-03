@@ -1,0 +1,48 @@
+[
+    {
+        "_id" : 1, 
+        "source" : "9988776655", 
+        "destination":"9123456789", 
+        "sourceLocation":"Bangalore", 
+        "destinationLocation":"Mysore", 
+        "callDuration":"00:5:00", 
+        "roaming":"No", 
+        "callCharge":"5"
+    },{
+        "_id" : 2, 
+        "source" : "9988776672", 
+        "destination":"9123456790", 
+        "sourceLocation":"Mysore", 
+        "destinationLocation":"Bangalore", 
+        "callDuration":"00:6:00", 
+        "roaming":"No", 
+        "callCharge":"5"
+    },{
+        "_id" : 3, 
+        "source" : "9188776633", 
+        "destination":"9223456722", 
+        "sourceLocation":"Bangalore", 
+        "destinationLocation":"Mumbai", 
+        "callDuration":"00:3:00", 
+        "roaming":"Yes", 
+        "callCharge":"15"
+    },{
+        "_id" : 4, 
+        "source" : "9118776659", 
+        "destination":"9233456786", 
+        "sourceLocation":"Mumbai", 
+        "destinationLocation":"Chennai", 
+        "callDuration":"00:4:00", 
+        "roaming":"Yes", 
+        "callCharge":"19"
+    },{
+        "_id" : 5, 
+        "source" : "9558776651", 
+        "destination":"9773456781", 
+        "sourceLocation":"Chennai", 
+        "destinationLocation":"Bangalore", 
+        "callDuration":"00:3:00", 
+        "roaming":"Yes", 
+        "callCharge":"10"
+    }
+]
