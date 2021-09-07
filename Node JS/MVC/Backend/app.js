@@ -29,7 +29,7 @@ mongoose.connect(url).then(res=>console.log("connected")).catch(error=>console.l
 app.use("/api/product",routerProduct);
 
 // http://localhost:9090/api/user/signUp        : post signup 
-
+// http://localhost:9090/api/user/signIn        : post signIn
 app.use("/api/user",userRouter);
 
 app.listen(9090,()=>console.log("Server running on port number 9090"))
